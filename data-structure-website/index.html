@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer"
     />
     <!--========JAVA-LINK-SECTION==============-->
-    <script src="./main.js" defer></script>
+    
     <title>EDUCATION</title>
 </head>
 
@@ -32,7 +32,8 @@
                 <li><a href='/discount'>discount</a></li>
                 <li><a href='/contact'>contact</a></li>
                 <a class='btn' href='/bookclass'>Book Now</a>
-            </ul>
+      <li id="loginLogoutPlaceholder" class="login-logout-item"></li>
+    </ul>
         </nav>
         <div class="nav-icon">
             <i class="fa-solid fa-bars nav-menu nav"></i>
@@ -540,6 +541,24 @@ FORM SECTION END
 
     <!------script animation-->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<!-- JavaScript -->
+<script src="./main.js"></script>
+<script src="./login.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+   const loginLogoutPlaceholder = document.getElementById(
+      'loginLogoutPlaceholder'
+   );
+   const isLoggedIn = localStorage.getItem('isLoggedIn');
+   if (isLoggedIn === 'true') {
+      loginLogoutPlaceholder.innerHTML =
+         '<a href="#" onclick="handleLogout()">Logout</a>';
+   } else {
+      loginLogoutPlaceholder.innerHTML = '<a href="./Login.html">Login</a>';
+   }
+});
+</script>
 </body>
 
 </html>
